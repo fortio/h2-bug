@@ -8,6 +8,7 @@ import (
 	"net"
 	"net/http"
 	"net/url"
+	"time"
 
 	"golang.org/x/net/http2"
 	"golang.org/x/net/http2/h2c"
@@ -64,6 +65,10 @@ func server() {
 }
 
 func main() {
-	server()
-	//	client()
+	go server()
+	time.Sleep(1 * time.Second)
+	fmt.Printf("h2 prior knowledge client works fine... it's upgrade that doesn't:\n")
+	client()
+	fmt.Printf("now try:\ncurl -d bar --http2 localhost:8001/foo\n")
+	select {}
 }
