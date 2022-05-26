@@ -6,3 +6,6 @@ https://github.com/golang/go/issues/52882
 and
 
 https://github.com/fortio/fortio/issues/562
+
+
+Bug is now fixed, archiving this
